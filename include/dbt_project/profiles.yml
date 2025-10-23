@@ -7,4 +7,5 @@ sample_project:
       project: serious-music-469407-f1
       dataset: banking
       threads: 4
-      keyfile: /usr/local/airflow/include/keys/gcp_bq_key.json
+
+      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
