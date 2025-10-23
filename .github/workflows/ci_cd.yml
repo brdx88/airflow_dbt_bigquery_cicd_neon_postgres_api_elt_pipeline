@@ -73,12 +73,15 @@ jobs:
       # --------------------------
       # 6️⃣ Validate dbt (syntax only)
       # --------------------------
-      - name: Validate dbt project
+      - name: Validate dbt project syntax
         run: |
           echo "Validating dbt project syntax..."
-          cd $DBT_PROJECT_DIR
-          dbt deps
-          dbt compile --profiles-dir -s mart_ecom_sales_summary
+          DBT_PROJECT_DIR="$(pwd)/include/dbt_project"
+          DBT_PROFILES_DIR="$(pwd)/include/dbt_project"
+          echo "Project dir: $DBT_PROJECT_DIR"
+          echo "Profiles dir: $DBT_PROFILES_DIR"
+          dbt deps --project-dir "$DBT_PROJECT_DIR" --profiles-dir "$DBT_PROFILES_DIR"
+          dbt compile --project-dir "$DBT_PROJECT_DIR" --profiles-dir "$DBT_PROFILES_DIR" -s mart_ecom_sales_summary
 
       # --------------------------
       # ✅ Success message
