@@ -88,7 +88,8 @@ jobs:
           echo "Profiles dir: $DBT_PROFILES_DIR"
           
           dbt deps --project-dir "$DBT_PROJECT_DIR" --profiles-dir "$DBT_PROFILES_DIR"
-          dbt compile --project-dir "$DBT_PROJECT_DIR" --profiles-dir "$DBT_PROFILES_DIR" -s mart_ecom_sales_summary
+          dbt parse --project-dir "$DBT_PROJECT_DIR" --profiles-dir "$DBT_PROFILES_DIR"
+
 
       # --------------------------
       # ✅ Success message
