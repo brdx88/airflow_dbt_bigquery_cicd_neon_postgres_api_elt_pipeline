@@ -33,6 +33,7 @@ POSTGRES_CONN_URI = os.getenv("POSTGRES_CONN")
 # GCS Object path (hardcoded example; can be dynamic later)
 GCS_OBJECT = "ecom_raw/products.csv"
 
+
 @dag(
     dag_id="elt_ecommerce",
     schedule="@daily",
@@ -45,7 +46,7 @@ def elt_ecommerce():
     # ------------------------
     # 🧩 EXTRACT GROUP
     # ------------------------
-    with TaskGroup("EXTRACTING_FROM_MULTIPLE_SOURCES", tooltip="Extract data from various sources") as extract_group:
+    with TaskGroup("EXTRACTING_FROM_MULTIPLE_SOURCES", tooltip="Extract data from various sources"):
 
         # --- Extract from MockAPI ---
         @task
@@ -88,7 +89,7 @@ def elt_ecommerce():
     # ------------------------
     # 🚀 LOAD GROUP
     # ------------------------
-    with TaskGroup("LOAD_INTO_BIGQUERY", tooltip="Load raw data into BigQuery") as load_group:
+    with TaskGroup("LOAD_INTO_BIGQUERY", tooltip="Load raw data into BigQuery"):
 
         @task
         def load_to_bq(json_data, table_name):
