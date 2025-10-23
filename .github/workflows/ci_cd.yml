@@ -8,7 +8,7 @@ on:
 
 jobs:
   build_and_test:
-    name: Build & Test dbt Models
+    name: Compile dbt Models
     runs-on: ubuntu-latest
     environment: production
 
@@ -36,7 +36,7 @@ jobs:
           export GOOGLE_APPLICATION_CREDENTIALS=${{ github.workspace }}/gcp_key.json
 
       # 5️⃣ Run dbt build
-      - name: Run dbt build
+      - name: Run dbt compile
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp_key.json
           GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
@@ -52,7 +52,7 @@ jobs:
         run: |
           cd $DBT_PROJECT_DIR
           dbt deps
-          dbt build --profiles-dir $DBT_PROFILES_DIR --target prod -s stg_loans
+          dbt compile --profiles-dir $DBT_PROFILES_DIR -s stg_loans
         shell: bash
 
       # 6️⃣ Clean up credentials
