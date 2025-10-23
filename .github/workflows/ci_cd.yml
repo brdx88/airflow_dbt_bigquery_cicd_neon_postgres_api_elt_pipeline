@@ -8,7 +8,8 @@ on:
 
 env:
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+  # GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+  GOOGLE_APPLICATION_CREDENTIALS: /tmp/fake_gcp_key.json
   GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
   BQ_DATASET: ${{ secrets.BQ_DATASET }}
   BQ_TABLE_ECOM_PRODUCTS: ${{ secrets.BQ_TABLE_ECOM_PRODUCTS }}
@@ -64,22 +65,28 @@ jobs:
           airflow db migrate || airflow db init || true
           airflow dags list
 
-
+      # --------------------------
+      # 6️⃣ Debug Repo Structure
+      # --------------------------
       - name: Debug repository structure
         run: |
           echo "Listing repository contents..."
           ls -R
 
       # --------------------------
-      # 6️⃣ Validate dbt (syntax only)
+      # 7️⃣ Validate dbt (syntax only)
       # --------------------------
       - name: Validate dbt project syntax
         run: |
           echo "Validating dbt project syntax..."
+
+          echo "{}" > /tmp/fake_gcp_key.json
+
           DBT_PROJECT_DIR="$(pwd)/include/dbt_project"
           DBT_PROFILES_DIR="$(pwd)/include/dbt_project"
           echo "Project dir: $DBT_PROJECT_DIR"
           echo "Profiles dir: $DBT_PROFILES_DIR"
+          
           dbt deps --project-dir "$DBT_PROJECT_DIR" --profiles-dir "$DBT_PROFILES_DIR"
           dbt compile --project-dir "$DBT_PROJECT_DIR" --profiles-dir "$DBT_PROFILES_DIR" -s mart_ecom_sales_summary
 
