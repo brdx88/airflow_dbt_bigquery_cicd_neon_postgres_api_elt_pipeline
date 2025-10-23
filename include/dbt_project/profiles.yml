@@ -1,0 +1,10 @@
+sample_project:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: serious-music-469407-f1
+      dataset: banking
+      threads: 4
+      keyfile: /usr/local/airflow/include/keys/gcp_bq_key.json

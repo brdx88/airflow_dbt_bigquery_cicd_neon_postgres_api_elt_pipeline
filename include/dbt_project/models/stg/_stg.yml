@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: stg_accounts
+    description: "Cleaned and standardized accounts data."
+    columns:
+      - name: account_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_branches
+    description: "Cleaned and standardized branches data."
+    columns:
+      - name: branch_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_customers
+    description: "Cleaned and standardized customers data."
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+      - name: gender
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - 'MALE'
+                  - 'FEMALE'
+  - name: stg_loans
+    description: "Cleaned and standardized loans data."
+    columns:
+      - name: loan_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_payments
+    description: "Cleaned and standardized payments data."
+    columns:
+      - name: payment_id
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_transactions
+    description: "Cleaned and standardized transactions data."
+    columns:
+      - name: transaction_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: ecom_customers
+    columns:
+    - name: customer_id
+      data_tests:
+        - unique
+        - not_null
+  - name: ecom_orders
+    columns:
+    - name: id
+      data_tests:
+        - unique
+        - not_null
+  - name: ecom_products
+    columns:
+    - name: product_id
+      data_tests:
+        - unique
+        - not_null

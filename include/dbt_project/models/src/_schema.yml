@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: banking_bronze                  # 'source' display name in dbt
+    database: serious-music-469407-f1     # BigQuery's project id
+    schema: banking_bronze                # BigQuery's dataset name
+    description: "Raw ingested from any sources stored in the bronze layer."
+    tables:
+      - name: accounts
+        description: "Raw banking accounts data ingested."
+      - name: branches
+        description: "Raw banking branches data ingested."
+      - name: customers
+        description: "Raw banking customers data ingested."
+      - name: loans
+        description: "Raw banking loans data ingested."
+      - name: payments
+        description: "Raw banking payments data ingested."
+      - name: transactions
+        description: "Raw banking transactions data ingested."
+      
+      - name: risk_customers_raw
+        description: "Raw banking customers data ingested."
+      - name: risk_loans_raw
+        description: "Raw banking loans data ingested."
+      - name: risk_payments_raw
+        description: "Raw banking payments data ingested."
+
+      - name: ecom_customers
+        description: "Ecommerce raw customers data ingested."
+      - name: ecom_orders
+        description: "Ecommerce raw orders data ingested."
+      - name: ecom_products
+        description: "Ecommerce raw products data ingested."

@@ -1,0 +1,1192 @@
+[0m03:24:37.363945 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d758810e60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d75663f860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d755f66600>]}
+
+
+============================== 03:24:37.369741 | 56805b62-887a-43d1-b8fd-7ea2746b7091 ==============================
+[0m03:24:37.369741 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m03:24:37.371670 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'invocation_command': 'dbt run --project-dir /usr/local/airflow/include/dbt_project --profiles-dir /usr/local/airflow/include/dbt_project -s stg_loans', 'static_parser': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'use_colors': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'write_json': 'True', 'warn_error': 'None', 'no_print': 'None', 'debug': 'False', 'cache_selected_only': 'False', 'target_path': 'None', 'partial_parse': 'True', 'empty': 'False', 'fail_fast': 'False', 'log_path': '/usr/local/airflow/include/dbt_project/logs', 'quiet': 'False', 'introspect': 'True', 'profiles_dir': '/usr/local/airflow/include/dbt_project', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m03:24:54.326616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '56805b62-887a-43d1-b8fd-7ea2746b7091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d7231843b0>]}
+[0m03:24:54.454954 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '56805b62-887a-43d1-b8fd-7ea2746b7091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d75862d280>]}
+[0m03:24:54.456549 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m03:24:54.873063 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m03:24:54.882270 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m03:24:54.884023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '56805b62-887a-43d1-b8fd-7ea2746b7091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d756baf7d0>]}
+[0m03:24:56.563782 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 4 unused configuration paths:
+- models.banking.src
+- models.banking.marts
+- models.banking.int
+- models.banking.stg
+[0m03:24:56.571713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '56805b62-887a-43d1-b8fd-7ea2746b7091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d72328dbb0>]}
+[0m03:24:56.682824 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m03:24:56.693930 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m03:24:56.759467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '56805b62-887a-43d1-b8fd-7ea2746b7091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d7562da660>]}
+[0m03:24:56.761096 [info ] [MainThread]: Found 1 operation, 508 macros
+[0m03:24:56.763095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '56805b62-887a-43d1-b8fd-7ea2746b7091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d722950d40>]}
+[0m03:24:56.764754 [warn ] [MainThread]: The selection criterion 'stg_loans' does not match any enabled nodes
+[0m03:24:56.766649 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m03:24:56.768400 [debug] [MainThread]: Command end result
+[0m03:24:56.835405 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m03:24:56.845489 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m03:24:56.859709 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/include/dbt_project/target/run_results.json
+[0m03:24:56.861973 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 19.648684, "process_in_blocks": "169048", "process_kernel_time": 4.838458, "process_mem_max_rss": "408636", "process_out_blocks": "0", "process_user_time": 18.623112}
+[0m03:24:56.864522 [debug] [MainThread]: Command `dbt run` succeeded at 03:24:56.864072 after 19.65 seconds
+[0m03:24:56.866657 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d756d02f00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d7563ea060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d755c94a10>]}
+[0m03:24:56.867821 [debug] [MainThread]: Flushing usage events
+[0m03:24:59.224311 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:27:34.174555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7179862384a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71798642d2e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71798623a4e0>]}
+
+
+============================== 03:27:34.180458 | 42912030-1076-4999-82d2-691094b946b2 ==============================
+[0m03:27:34.180458 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m03:27:34.181587 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run --project-dir /usr/local/airflow/include/dbt_project --profiles-dir /usr/local/airflow/include/dbt_project -s stg_loans', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'introspect': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'empty': 'False', 'debug': 'False', 'target_path': 'None', 'printer_width': '80', 'use_colors': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/usr/local/airflow/include/dbt_project', 'log_cache_events': 'False', 'quiet': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'log_path': '/usr/local/airflow/include/dbt_project/logs', 'partial_parse': 'True'}
+[0m03:27:47.789713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '42912030-1076-4999-82d2-691094b946b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717952189220>]}
+[0m03:27:47.876590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '42912030-1076-4999-82d2-691094b946b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71795c849cd0>]}
+[0m03:27:47.878028 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m03:27:48.245378 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m03:27:48.583751 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m03:27:48.584673 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m03:27:48.586037 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 4 unused configuration paths:
+- models.banking.marts
+- models.banking.int
+- models.banking.stg
+- models.banking.src
+[0m03:27:48.608487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '42912030-1076-4999-82d2-691094b946b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7179857b3f80>]}
+[0m03:27:48.714838 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m03:27:48.726003 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m03:27:48.762104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '42912030-1076-4999-82d2-691094b946b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717951b5f0e0>]}
+[0m03:27:48.763645 [info ] [MainThread]: Found 1 operation, 508 macros
+[0m03:27:48.764993 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '42912030-1076-4999-82d2-691094b946b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7179857857f0>]}
+[0m03:27:48.766309 [warn ] [MainThread]: The selection criterion 'stg_loans' does not match any enabled nodes
+[0m03:27:48.768376 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m03:27:48.771083 [debug] [MainThread]: Command end result
+[0m03:27:48.826056 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m03:27:48.837868 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m03:27:48.850896 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/include/dbt_project/target/run_results.json
+[0m03:27:48.853294 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 14.025954, "process_in_blocks": "0", "process_kernel_time": 3.254086, "process_mem_max_rss": "407864", "process_out_blocks": "0", "process_user_time": 14.943324}
+[0m03:27:48.854529 [debug] [MainThread]: Command `dbt run` succeeded at 03:27:48.854332 after 14.03 seconds
+[0m03:27:48.855726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717985184800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71798538af90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71795218af90>]}
+[0m03:27:48.857221 [debug] [MainThread]: Flushing usage events
+[0m03:27:49.886219 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:38:46.255167 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bccb6a26330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bccb7bf4ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bccb6d40f50>]}
+
+
+============================== 03:38:46.262905 | f5e2ad20-24d1-44d1-b041-260e6a62d7d0 ==============================
+[0m03:38:46.262905 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m03:38:46.264093 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --project-dir /usr/local/airflow/include/dbt_project --profiles-dir /usr/local/airflow/include/dbt_project -s stg_loans', 'printer_width': '80', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': '/usr/local/airflow/include/dbt_project/logs', 'warn_error': 'None', 'static_parser': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'profiles_dir': '/usr/local/airflow/include/dbt_project', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'fail_fast': 'False', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'indirect_selection': 'eager', 'introspect': 'True', 'quiet': 'False', 'partial_parse': 'True', 'no_print': 'None', 'use_colors': 'True'}
+[0m03:39:04.187959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f5e2ad20-24d1-44d1-b041-260e6a62d7d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bcc838db2c0>]}
+[0m03:39:04.282531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f5e2ad20-24d1-44d1-b041-260e6a62d7d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bcc83f5f2c0>]}
+[0m03:39:04.283997 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m03:39:04.665909 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m03:39:05.053291 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m03:39:05.054686 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m03:39:05.056050 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 4 unused configuration paths:
+- models.banking.int
+- models.banking.stg
+- models.banking.marts
+- models.banking.src
+[0m03:39:05.078255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f5e2ad20-24d1-44d1-b041-260e6a62d7d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bcc83dbbf50>]}
+[0m03:39:05.174469 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m03:39:05.183120 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m03:39:05.217964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f5e2ad20-24d1-44d1-b041-260e6a62d7d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bcc832ded20>]}
+[0m03:39:05.219756 [info ] [MainThread]: Found 1 operation, 508 macros
+[0m03:39:05.222265 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f5e2ad20-24d1-44d1-b041-260e6a62d7d0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bcc83ac57f0>]}
+[0m03:39:05.223294 [warn ] [MainThread]: The selection criterion 'stg_loans' does not match any enabled nodes
+[0m03:39:05.224764 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m03:39:05.228444 [debug] [MainThread]: Command end result
+[0m03:39:05.282886 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m03:39:05.294473 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m03:39:05.305668 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/include/dbt_project/target/run_results.json
+[0m03:39:05.308125 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 18.228298, "process_in_blocks": "1232", "process_kernel_time": 6.152963, "process_mem_max_rss": "408312", "process_out_blocks": "0", "process_user_time": 16.204432}
+[0m03:39:05.309676 [debug] [MainThread]: Command `dbt run` succeeded at 03:39:05.309499 after 18.23 seconds
+[0m03:39:05.310604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bccb6dfe720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bccb6f00680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bcc83349e50>]}
+[0m03:39:05.311530 [debug] [MainThread]: Flushing usage events
+[0m03:39:06.564890 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:51:39.380524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371f8c6e750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371fa8dbe30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371f8c6f290>]}
+
+
+============================== 04:51:39.390230 | d9610c3e-c236-4144-b08e-1ea1bcad3ef4 ==============================
+[0m04:51:39.390230 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m04:51:39.392796 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'profiles_dir': '/usr/local/airflow/include/dbt_project', 'introspect': 'True', 'quiet': 'False', 'printer_width': '80', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'target_path': 'None', 'log_format': 'default', 'static_parser': 'True', 'no_print': 'None', 'invocation_command': 'dbt run --project-dir /usr/local/airflow/include/dbt_project --profiles-dir /usr/local/airflow/include/dbt_project -s +mart_ecom_sales_summary', 'log_path': '/usr/local/airflow/include/dbt_project/logs', 'version_check': 'True', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'write_json': 'True', 'warn_error': 'None'}
+[0m04:51:58.901395 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd9610c3e-c236-4144-b08e-1ea1bcad3ef4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371fad76600>]}
+[0m04:51:59.042623 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd9610c3e-c236-4144-b08e-1ea1bcad3ef4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371c5473f50>]}
+[0m04:51:59.044103 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m04:51:59.510972 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m04:52:00.037004 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m04:52:00.039353 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m04:52:00.042208 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 4 unused configuration paths:
+- models.banking.src
+- models.banking.int
+- models.banking.stg
+- models.banking.marts
+[0m04:52:00.068084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd9610c3e-c236-4144-b08e-1ea1bcad3ef4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371f93871a0>]}
+[0m04:52:00.182795 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m04:52:00.196545 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m04:52:00.238617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd9610c3e-c236-4144-b08e-1ea1bcad3ef4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371c4c6b080>]}
+[0m04:52:00.239843 [info ] [MainThread]: Found 1 operation, 508 macros
+[0m04:52:00.240712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd9610c3e-c236-4144-b08e-1ea1bcad3ef4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371c5ac91c0>]}
+[0m04:52:00.242507 [warn ] [MainThread]: The selection criterion '+mart_ecom_sales_summary' does not match any enabled nodes
+[0m04:52:00.245195 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m04:52:00.248055 [debug] [MainThread]: Command end result
+[0m04:52:00.308256 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m04:52:00.319345 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m04:52:00.332009 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/include/dbt_project/target/run_results.json
+[0m04:52:00.334437 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 18.89511, "process_in_blocks": "12864", "process_kernel_time": 6.185505, "process_mem_max_rss": "407820", "process_out_blocks": "0", "process_user_time": 17.633118}
+[0m04:52:00.336520 [debug] [MainThread]: Command `dbt run` succeeded at 04:52:00.336207 after 18.90 seconds
+[0m04:52:00.337683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371f8aa7da0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371c52bbd10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7371c54fd610>]}
+[0m04:52:00.339411 [debug] [MainThread]: Flushing usage events
+[0m04:52:01.399305 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:59:15.704178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7496218c7ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7496210d7c80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7496210d64e0>]}
+
+
+============================== 04:59:15.710577 | abd62614-6cdf-42c2-97ba-9dd540e579d2 ==============================
+[0m04:59:15.710577 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m04:59:15.711673 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'no_print': 'None', 'profiles_dir': '/usr/local/airflow/include/dbt_project', 'printer_width': '80', 'invocation_command': 'dbt run --project-dir /usr/local/airflow/include/dbt_project --profiles-dir /usr/local/airflow/include/dbt_project -s +mart_ecom_sales_summary', 'warn_error': 'None', 'indirect_selection': 'eager', 'write_json': 'True', 'static_parser': 'True', 'empty': 'False', 'log_path': '/usr/local/airflow/include/dbt_project/logs', 'version_check': 'True', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False'}
+[0m04:59:33.139576 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495ed7f31d0>]}
+[0m04:59:33.251883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495f0f14e00>]}
+[0m04:59:33.254256 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m04:59:33.671970 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m04:59:34.388221 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 9 files added, 0 files changed.
+[0m04:59:34.389442 [debug] [MainThread]: Partial parsing: added file: banking://models/stg/stg_ecom_customers.sql
+[0m04:59:34.390480 [debug] [MainThread]: Partial parsing: added file: banking://models/int/int_ecom_orders_enriched.sql
+[0m04:59:34.391555 [debug] [MainThread]: Partial parsing: added file: banking://models/stg/stg_ecom_orders.sql
+[0m04:59:34.392708 [debug] [MainThread]: Partial parsing: added file: banking://models/stg/stg_ecom_products.sql
+[0m04:59:34.394134 [debug] [MainThread]: Partial parsing: added file: banking://models/marts/_mart.yml
+[0m04:59:34.395523 [debug] [MainThread]: Partial parsing: added file: banking://models/marts/mart_ecom_sales_summary.sql
+[0m04:59:34.396642 [debug] [MainThread]: Partial parsing: added file: banking://models/int/_int.yml
+[0m04:59:34.397542 [debug] [MainThread]: Partial parsing: added file: banking://models/src/_schema.yml
+[0m04:59:34.399023 [debug] [MainThread]: Partial parsing: added file: banking://models/stg/_stg.yml
+[0m04:59:35.096669 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'mart_customer_portfolio' in the 'models' section of file 'models/marts/_mart.yml'
+[0m04:59:35.593132 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'int_accounts_summary' in the 'models' section of file 'models/int/_int.yml'
+[0m04:59:35.609684 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'int_branches_summary' in the 'models' section of file 'models/int/_int.yml'
+[0m04:59:35.613196 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'int_customers' in the 'models' section of file 'models/int/_int.yml'
+[0m04:59:35.623353 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'int_loans_summary' in the 'models' section of file 'models/int/_int.yml'
+[0m04:59:35.627486 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'int_payments_summary' in the 'models' section of file 'models/int/_int.yml'
+[0m04:59:35.631430 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'int_transactions_summary' in the 'models' section of file 'models/int/_int.yml'
+[0m04:59:35.676027 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.accepted_range` defined on
+'int_branches_summary' in package 'banking' (models/int/_int.yml). Arguments to
+generic tests should be nested under the `arguments` property.
+[0m04:59:35.677103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495ec19b590>]}
+[0m04:59:35.883728 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_accounts' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:35.887767 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_branches' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:35.890212 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_customers' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:35.894373 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_loans' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:35.896406 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_payments' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:35.898171 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'stg_transactions' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:35.900176 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'ecom_customers' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:35.902566 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'ecom_orders' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:35.904278 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'ecom_products' in the 'models' section of file 'models/stg/_stg.yml'
+[0m04:59:36.716059 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_mart_customer_portfolio_customer_id.f852d028a8' (models/marts/_mart.yml) depends on a node named 'mart_customer_portfolio' in package '' which was not found
+[0m04:59:36.717831 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_mart_customer_portfolio_customer_id.0382773109' (models/marts/_mart.yml) depends on a node named 'mart_customer_portfolio' in package '' which was not found
+[0m04:59:36.719326 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.relationships_mart_customer_portfolio_customer_id__customer_id__ref_stg_customers_.50ae73d097' (models/marts/_mart.yml) depends on a node named 'stg_customers' in package '' which was not found
+[0m04:59:36.720669 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.relationships_mart_customer_portfolio_customer_id__customer_id__ref_stg_customers_.50ae73d097' (models/marts/_mart.yml) depends on a node named 'mart_customer_portfolio' in package '' which was not found
+[0m04:59:36.722850 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_accounts_summary_customer_id.dcf9ff4161' (models/int/_int.yml) depends on a node named 'int_accounts_summary' in package '' which was not found
+[0m04:59:36.724235 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_int_accounts_summary_customer_id.c64879b230' (models/int/_int.yml) depends on a node named 'int_accounts_summary' in package '' which was not found
+[0m04:59:36.725309 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_accounts_summary_total_accounts.c01e7f9e51' (models/int/_int.yml) depends on a node named 'int_accounts_summary' in package '' which was not found
+[0m04:59:36.726544 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.accepted_values_int_accounts_summary_CAST_has_active_account_as_STRING___1__0.e7143db53e' (models/int/_int.yml) depends on a node named 'int_accounts_summary' in package '' which was not found
+[0m04:59:36.727825 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_int_branches_summary_branch_id.5745c88b32' (models/int/_int.yml) depends on a node named 'int_branches_summary' in package '' which was not found
+[0m04:59:36.729921 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_branches_summary_branch_id.5d1f8983ab' (models/int/_int.yml) depends on a node named 'int_branches_summary' in package '' which was not found
+[0m04:59:36.731341 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_branches_summary_branch_name.5a05de8b32' (models/int/_int.yml) depends on a node named 'int_branches_summary' in package '' which was not found
+[0m04:59:36.732308 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_branches_summary_branch_age_years.bf41f737f5' (models/int/_int.yml) depends on a node named 'int_branches_summary' in package '' which was not found
+[0m04:59:36.733328 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.dbt_utils_accepted_range_int_branches_summary_branch_age_years__200__0.0c2a6c30f4' (models/int/_int.yml) depends on a node named 'int_branches_summary' in package '' which was not found
+[0m04:59:36.736925 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.accepted_values_int_branches_summary_branch_size_category__SMALL__MEDIUM__LARGE.407bf8c29c' (models/int/_int.yml) depends on a node named 'int_branches_summary' in package '' which was not found
+[0m04:59:36.738683 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_int_customers_customer_id.f1ce7cb515' (models/int/_int.yml) depends on a node named 'int_customers' in package '' which was not found
+[0m04:59:36.739936 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_customers_customer_id.ff6b6d8f00' (models/int/_int.yml) depends on a node named 'int_customers' in package '' which was not found
+[0m04:59:36.741517 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_loans_summary_loan_id.04c1b5f609' (models/int/_int.yml) depends on a node named 'int_loans_summary' in package '' which was not found
+[0m04:59:36.743646 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_int_loans_summary_loan_id.6df5c59022' (models/int/_int.yml) depends on a node named 'int_loans_summary' in package '' which was not found
+[0m04:59:36.744979 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_loans_summary_customer_id.78be270837' (models/int/_int.yml) depends on a node named 'int_loans_summary' in package '' which was not found
+[0m04:59:36.745900 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_payments_summary_payment_id.c38dc5d74a' (models/int/_int.yml) depends on a node named 'int_payments_summary' in package '' which was not found
+[0m04:59:36.746977 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_int_payments_summary_payment_id.8facb52263' (models/int/_int.yml) depends on a node named 'int_payments_summary' in package '' which was not found
+[0m04:59:36.750269 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_int_transactions_summary_transaction_id.ca35a48bf6' (models/int/_int.yml) depends on a node named 'int_transactions_summary' in package '' which was not found
+[0m04:59:36.751612 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_int_transactions_summary_transaction_id.bbeae3ec35' (models/int/_int.yml) depends on a node named 'int_transactions_summary' in package '' which was not found
+[0m04:59:36.752512 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_stg_accounts_account_id.cdf6252c79' (models/stg/_stg.yml) depends on a node named 'stg_accounts' in package '' which was not found
+[0m04:59:36.753418 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_stg_accounts_account_id.182dfbc108' (models/stg/_stg.yml) depends on a node named 'stg_accounts' in package '' which was not found
+[0m04:59:36.754832 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_stg_branches_branch_id.14cc84e974' (models/stg/_stg.yml) depends on a node named 'stg_branches' in package '' which was not found
+[0m04:59:36.756651 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_stg_branches_branch_id.627eb5ecb8' (models/stg/_stg.yml) depends on a node named 'stg_branches' in package '' which was not found
+[0m04:59:36.758230 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_stg_customers_customer_id.c7614daada' (models/stg/_stg.yml) depends on a node named 'stg_customers' in package '' which was not found
+[0m04:59:36.759226 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_stg_customers_customer_id.e2cfb1f9aa' (models/stg/_stg.yml) depends on a node named 'stg_customers' in package '' which was not found
+[0m04:59:36.760171 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.accepted_values_stg_customers_gender__MALE__FEMALE.0e3698f936' (models/stg/_stg.yml) depends on a node named 'stg_customers' in package '' which was not found
+[0m04:59:36.761511 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_stg_loans_loan_id.be67636b63' (models/stg/_stg.yml) depends on a node named 'stg_loans' in package '' which was not found
+[0m04:59:36.763314 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_stg_loans_loan_id.b77c69982c' (models/stg/_stg.yml) depends on a node named 'stg_loans' in package '' which was not found
+[0m04:59:36.764687 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_stg_payments_payment_id.3744510712' (models/stg/_stg.yml) depends on a node named 'stg_payments' in package '' which was not found
+[0m04:59:36.766235 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_stg_payments_payment_id.c19cc50075' (models/stg/_stg.yml) depends on a node named 'stg_payments' in package '' which was not found
+[0m04:59:36.767561 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_stg_transactions_transaction_id.ee9a78a396' (models/stg/_stg.yml) depends on a node named 'stg_transactions' in package '' which was not found
+[0m04:59:36.768961 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_stg_transactions_transaction_id.1d00a8e2e4' (models/stg/_stg.yml) depends on a node named 'stg_transactions' in package '' which was not found
+[0m04:59:36.770292 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_ecom_customers_customer_id.3443011fbb' (models/stg/_stg.yml) depends on a node named 'ecom_customers' in package '' which was not found
+[0m04:59:36.771354 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_ecom_customers_customer_id.faf9a448e8' (models/stg/_stg.yml) depends on a node named 'ecom_customers' in package '' which was not found
+[0m04:59:36.772649 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_ecom_orders_id.3cc0b92e3c' (models/stg/_stg.yml) depends on a node named 'ecom_orders' in package '' which was not found
+[0m04:59:36.774051 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_ecom_orders_id.8dfc84bc68' (models/stg/_stg.yml) depends on a node named 'ecom_orders' in package '' which was not found
+[0m04:59:36.776708 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.unique_ecom_products_product_id.e8ba362d09' (models/stg/_stg.yml) depends on a node named 'ecom_products' in package '' which was not found
+[0m04:59:36.778060 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.banking.not_null_ecom_products_product_id.7a0d0f089c' (models/stg/_stg.yml) depends on a node named 'ecom_products' in package '' which was not found
+[0m04:59:37.821646 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking.src
+[0m04:59:37.845681 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495e7338ef0>]}
+[0m04:59:38.141204 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m04:59:38.152693 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m04:59:38.201096 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495ec19fc50>]}
+[0m04:59:38.202478 [info ] [MainThread]: Found 1 operation, 5 models, 1 test, 12 sources, 508 macros
+[0m04:59:38.203721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495ec1a0f80>]}
+[0m04:59:38.207638 [info ] [MainThread]: 
+[0m04:59:38.209490 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m04:59:38.210503 [info ] [MainThread]: 
+[0m04:59:38.211957 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m04:59:38.219540 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_serious-music-469407-f1'
+[0m04:59:38.223050 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:59:38.224004 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_serious-music-469407-f1'
+[0m04:59:38.225458 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:59:39.320439 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1, now list_serious-music-469407-f1_banking_gold)
+[0m04:59:39.324151 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1, now list_serious-music-469407-f1_banking_silver)
+[0m04:59:39.326392 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:59:39.328167 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:59:39.987216 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495ec10b320>]}
+[0m04:59:39.989331 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m04:59:40.065363 [debug] [Thread-1 (]: Began running node model.banking.stg_ecom_customers
+[0m04:59:40.066546 [debug] [Thread-2 (]: Began running node model.banking.stg_ecom_orders
+[0m04:59:40.067842 [debug] [Thread-3 (]: Began running node model.banking.stg_ecom_products
+[0m04:59:40.069758 [info ] [Thread-1 (]: 1 of 5 START sql view model banking_silver.stg_ecom_customers .................. [RUN]
+[0m04:59:40.073244 [info ] [Thread-2 (]: 2 of 5 START sql view model banking_silver.stg_ecom_orders ..................... [RUN]
+[0m04:59:40.074797 [info ] [Thread-3 (]: 3 of 5 START sql view model banking_silver.stg_ecom_products ................... [RUN]
+[0m04:59:40.077217 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1_banking_gold, now model.banking.stg_ecom_customers)
+[0m04:59:40.079041 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1_banking_silver, now model.banking.stg_ecom_orders)
+[0m04:59:40.080399 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.banking.stg_ecom_products'
+[0m04:59:40.081736 [debug] [Thread-1 (]: Began compiling node model.banking.stg_ecom_customers
+[0m04:59:40.083476 [debug] [Thread-2 (]: Began compiling node model.banking.stg_ecom_orders
+[0m04:59:40.084793 [debug] [Thread-3 (]: Began compiling node model.banking.stg_ecom_products
+[0m04:59:40.098256 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking.stg_ecom_customers"
+[0m04:59:40.103104 [debug] [Thread-2 (]: Writing injected SQL for node "model.banking.stg_ecom_orders"
+[0m04:59:40.112490 [debug] [Thread-3 (]: Writing injected SQL for node "model.banking.stg_ecom_products"
+[0m04:59:40.164632 [debug] [Thread-3 (]: Began executing node model.banking.stg_ecom_products
+[0m04:59:40.189150 [debug] [Thread-2 (]: Began executing node model.banking.stg_ecom_orders
+[0m04:59:40.198462 [debug] [Thread-1 (]: Began executing node model.banking.stg_ecom_customers
+[0m04:59:40.293482 [debug] [Thread-3 (]: Writing runtime sql for node "model.banking.stg_ecom_products"
+[0m04:59:40.294916 [debug] [Thread-2 (]: Writing runtime sql for node "model.banking.stg_ecom_orders"
+[0m04:59:40.290639 [debug] [Thread-1 (]: Writing runtime sql for node "model.banking.stg_ecom_customers"
+[0m04:59:40.369610 [debug] [Thread-3 (]: On model.banking.stg_ecom_products: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_products"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_products`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_products`
+
+),
+
+renamed as (
+
+    select
+        price,
+        UPPER(category) AS category,
+        UPPER(product_name) AS product_name,
+        product_id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m04:59:40.371355 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m04:59:40.377957 [debug] [Thread-2 (]: On model.banking.stg_ecom_orders: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_orders"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_orders`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_orders`
+
+),
+
+renamed as (
+
+    select
+        product_id,
+        customer_id,
+        total_amount,
+        quantity,
+        order_date,
+        id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m04:59:40.379294 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m04:59:40.418595 [debug] [Thread-1 (]: On model.banking.stg_ecom_customers: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_customers"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_customers`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_customers`
+
+),
+
+renamed as (
+
+    select
+        DATE(TIMESTAMP_MILLIS(signup_date)) as signup_date,
+        UPPER(last_name) AS last_name,
+        email,
+        UPPER(first_name) AS first_name,
+        customer_id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m04:59:40.422549 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m04:59:41.293821 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:47951f28-f6fd-4688-8202-dfce63f3ca3a&page=queryresults
+[0m04:59:41.334573 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:9731e9cd-a261-4cb0-9fab-bcdd57924a1d&page=queryresults
+[0m04:59:41.336991 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:56326df9-2762-477a-86f1-d498b0347489&page=queryresults
+[0m04:59:42.584523 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495e41f2870>]}
+[0m04:59:42.586157 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495e7261ca0>]}
+[0m04:59:42.589720 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495f0c3bf20>]}
+[0m04:59:42.591846 [info ] [Thread-1 (]: 1 of 5 OK created sql view model banking_silver.stg_ecom_customers ............. [[32mCREATE VIEW (0 processed)[0m in 2.48s]
+[0m04:59:42.595829 [info ] [Thread-3 (]: 3 of 5 OK created sql view model banking_silver.stg_ecom_products .............. [[32mCREATE VIEW (0 processed)[0m in 2.49s]
+[0m04:59:42.599011 [info ] [Thread-2 (]: 2 of 5 OK created sql view model banking_silver.stg_ecom_orders ................ [[32mCREATE VIEW (0 processed)[0m in 2.50s]
+[0m04:59:42.604417 [debug] [Thread-1 (]: Finished running node model.banking.stg_ecom_customers
+[0m04:59:42.606954 [debug] [Thread-3 (]: Finished running node model.banking.stg_ecom_products
+[0m04:59:42.609851 [debug] [Thread-2 (]: Finished running node model.banking.stg_ecom_orders
+[0m04:59:42.616221 [debug] [Thread-4 (]: Began running node model.banking.int_ecom_orders_enriched
+[0m04:59:42.618843 [info ] [Thread-4 (]: 4 of 5 START sql table model banking_silver.int_ecom_orders_enriched ........... [RUN]
+[0m04:59:42.621331 [debug] [Thread-4 (]: Acquiring new bigquery connection 'model.banking.int_ecom_orders_enriched'
+[0m04:59:42.626676 [debug] [Thread-4 (]: Began compiling node model.banking.int_ecom_orders_enriched
+[0m04:59:42.640915 [debug] [Thread-4 (]: Writing injected SQL for node "model.banking.int_ecom_orders_enriched"
+[0m04:59:42.700344 [debug] [Thread-4 (]: Began executing node model.banking.int_ecom_orders_enriched
+[0m04:59:42.787516 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m04:59:43.567592 [debug] [Thread-4 (]: Writing runtime sql for node "model.banking.int_ecom_orders_enriched"
+[0m04:59:43.606298 [debug] [Thread-4 (]: On model.banking.int_ecom_orders_enriched: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.int_ecom_orders_enriched"} */
+
+  
+    
+
+    create or replace table `serious-music-469407-f1`.`banking_silver`.`int_ecom_orders_enriched`
+      
+    partition by position_date
+    cluster by customer_id
+
+    
+    OPTIONS(
+      require_partition_filter=False
+    )
+    as (
+      WITH ORDERS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_orders`
+)
+
+, CUSTOMERS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_customers`
+)
+
+, PRODUCTS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_products`
+)
+
+SELECT
+    CAST('2025-10-23' AS DATE) AS position_date,
+    CUSTOMERS.customer_id,
+    CUSTOMERS.first_name || ' ' || CUSTOMERS.last_name AS customer_name,
+    CUSTOMERS.email,
+    CUSTOMERS.signup_date,
+    ORDERS.id as order_id,
+    ORDERS.order_date,
+    ORDERS.quantity,
+    ORDERS.total_amount,
+    
+    CASE
+        WHEN ORDERS.total_amount > 1000 THEN 'HIGH VALUE'
+        WHEN ORDERS.total_amount BETWEEN 500 AND 1000 THEN 'MEDUM VALUE'
+        ELSE 'LOW VALUE'
+    END AS order_value_segment,
+
+    PRODUCTS.product_name,
+    PRODUCTS.category,
+    PRODUCTS.price
+
+FROM CUSTOMERS
+LEFT JOIN ORDERS
+    ON CUSTOMERS.customer_id = ORDERS.customer_id
+LEFT JOIN PRODUCTS
+    ON ORDERS.product_id = PRODUCTS.product_id
+    );
+  
+[0m04:59:44.397517 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:090366fc-3b0d-4d94-b1e1-aebee0849b48&page=queryresults
+[0m04:59:46.793650 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495e40f4830>]}
+[0m04:59:46.797171 [info ] [Thread-4 (]: 4 of 5 OK created sql table model banking_silver.int_ecom_orders_enriched ...... [[32mCREATE TABLE (10.0 rows, 846.0 Bytes processed)[0m in 4.17s]
+[0m04:59:46.812504 [debug] [Thread-4 (]: Finished running node model.banking.int_ecom_orders_enriched
+[0m04:59:46.817826 [debug] [Thread-3 (]: Began running node model.banking.mart_ecom_sales_summary
+[0m04:59:46.824151 [info ] [Thread-3 (]: 5 of 5 START sql table model banking_gold.mart_ecom_sales_summary .............. [RUN]
+[0m04:59:46.827512 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.banking.stg_ecom_products, now model.banking.mart_ecom_sales_summary)
+[0m04:59:46.829996 [debug] [Thread-3 (]: Began compiling node model.banking.mart_ecom_sales_summary
+[0m04:59:46.845060 [debug] [Thread-3 (]: Writing injected SQL for node "model.banking.mart_ecom_sales_summary"
+[0m04:59:46.925478 [debug] [Thread-3 (]: Began executing node model.banking.mart_ecom_sales_summary
+[0m04:59:46.934815 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m04:59:47.586658 [debug] [Thread-3 (]: Writing runtime sql for node "model.banking.mart_ecom_sales_summary"
+[0m04:59:47.617309 [debug] [Thread-3 (]: On model.banking.mart_ecom_sales_summary: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.mart_ecom_sales_summary"} */
+
+  
+    
+
+    create or replace table `serious-music-469407-f1`.`banking_gold`.`mart_ecom_sales_summary`
+      
+    partition by position_date
+    cluster by order_month, category
+
+    
+    OPTIONS(
+      require_partition_filter=False
+    )
+    as (
+      
+
+SELECT
+    CAST('2025-10-23' AS DATE) AS position_date,
+    DATE_TRUNC(order_date, MONTH) AS order_month,
+    category,
+    COUNT(DISTINCT order_id) AS total_orders,
+    SUM(quantity) AS total_items_sold,
+    SUM(total_amount) AS total_revenue,
+    ROUND(AVG(total_amount), 2) AS avg_order_value
+FROM `serious-music-469407-f1`.`banking_silver`.`int_ecom_orders_enriched`
+WHERE position_date = '2025-10-23'
+GROUP BY 1, 2, 3
+    );
+  
+[0m04:59:48.379935 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:f2cc7aac-2f5d-438c-be0d-0e9534f4f2ae&page=queryresults
+[0m04:59:50.715148 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'abd62614-6cdf-42c2-97ba-9dd540e579d2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495e7339e80>]}
+[0m04:59:50.717114 [info ] [Thread-3 (]: 5 of 5 OK created sql table model banking_gold.mart_ecom_sales_summary ......... [[32mCREATE TABLE (3.0 rows, 474.0 Bytes processed)[0m in 3.89s]
+[0m04:59:50.718352 [debug] [Thread-3 (]: Finished running node model.banking.mart_ecom_sales_summary
+[0m04:59:50.723406 [info ] [MainThread]: 
+[0m04:59:50.732950 [debug] [MainThread]: Writing injected SQL for node "operation.banking.banking-on-run-end-0"
+[0m04:59:50.786501 [info ] [MainThread]: 1 of 1 START hook: banking.on-run-end.0 ........................................ [RUN]
+[0m04:59:50.788628 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "connection_name": "master"} */
+
+    ALTER TABLE serious-music-469407-f1.banking_silver.int_ecom_orders_enriched
+    SET OPTIONS (require_partition_filter = true);
+
+    ALTER TABLE serious-music-469407-f1.banking_gold.mart_ecom_sales_summary
+    SET OPTIONS (require_partition_filter = true);
+
+[0m04:59:50.790164 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m04:59:51.458947 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:eac4b286-7faf-4e27-a515-945fe3f4a533&page=queryresults
+[0m04:59:52.885254 [info ] [MainThread]: 1 of 1 OK hook: banking.on-run-end.0 ........................................... [[32mOK[0m in 2.16s]
+[0m04:59:52.897908 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m04:59:52.901353 [debug] [MainThread]: Connection 'model.banking.stg_ecom_customers' was properly closed.
+[0m04:59:52.902763 [debug] [MainThread]: Connection 'model.banking.stg_ecom_orders' was properly closed.
+[0m04:59:52.904257 [debug] [MainThread]: Connection 'model.banking.mart_ecom_sales_summary' was properly closed.
+[0m04:59:52.906188 [debug] [MainThread]: Connection 'model.banking.int_ecom_orders_enriched' was properly closed.
+[0m04:59:52.907543 [info ] [MainThread]: 
+[0m04:59:52.908995 [info ] [MainThread]: Finished running 1 project hook, 2 table models, 3 view models in 0 hours 0 minutes and 14.70 seconds (14.70s).
+[0m04:59:52.912095 [debug] [MainThread]: Command end result
+[0m04:59:53.007104 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m04:59:53.022645 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m04:59:53.043577 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/include/dbt_project/target/run_results.json
+[0m04:59:53.044633 [info ] [MainThread]: 
+[0m04:59:53.046092 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m04:59:53.047713 [info ] [MainThread]: 
+[0m04:59:53.049059 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m04:59:53.051008 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m04:59:53.055905 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 35.95858, "process_in_blocks": "4672", "process_kernel_time": 6.943522, "process_mem_max_rss": "433304", "process_out_blocks": "0", "process_user_time": 21.542395}
+[0m04:59:53.058154 [debug] [MainThread]: Command `dbt run` succeeded at 04:59:53.057694 after 35.96 seconds
+[0m04:59:53.059830 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x749620febe00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495ec168dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7495ec168b00>]}
+[0m04:59:53.062409 [debug] [MainThread]: Flushing usage events
+[0m04:59:54.520004 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:03:44.068500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e02b466a030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e02b41dc080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e02b3ccba10>]}
+
+
+============================== 05:03:44.077492 | e805f696-3e1b-4edb-81db-016e64dad889 ==============================
+[0m05:03:44.077492 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m05:03:44.079691 [debug] [MainThread]: running dbt with arguments {'log_path': '/usr/local/airflow/include/dbt_project/logs', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'introspect': 'True', 'write_json': 'True', 'quiet': 'False', 'fail_fast': 'False', 'invocation_command': 'dbt build --project-dir /usr/local/airflow/include/dbt_project --profiles-dir /usr/local/airflow/include/dbt_project -s +mart_ecom_sales_summary', 'empty': 'False', 'version_check': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'no_print': 'None', 'printer_width': '80', 'profiles_dir': '/usr/local/airflow/include/dbt_project', 'log_format': 'default'}
+[0m05:04:06.050708 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e02809bf1a0>]}
+[0m05:04:06.403544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0280e93d70>]}
+[0m05:04:06.406163 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m05:04:07.028326 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m05:04:08.067282 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m05:04:08.070003 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m05:04:08.090832 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking.src
+[0m05:04:08.197182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0280ba7e30>]}
+[0m05:04:08.464637 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m05:04:08.480274 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m05:04:08.659032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e02801ea8d0>]}
+[0m05:04:08.661199 [info ] [MainThread]: Found 1 operation, 5 models, 1 test, 12 sources, 508 macros
+[0m05:04:08.666200 [info ] [MainThread]: 
+[0m05:04:08.667385 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m05:04:08.668382 [info ] [MainThread]: 
+[0m05:04:08.671087 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m05:04:08.680029 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_serious-music-469407-f1'
+[0m05:04:08.681200 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:04:08.681949 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_serious-music-469407-f1'
+[0m05:04:08.685418 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:04:09.472324 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1, now list_serious-music-469407-f1_banking_silver)
+[0m05:04:09.474304 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1, now list_serious-music-469407-f1_banking_gold)
+[0m05:04:09.475583 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:04:09.477982 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:04:11.176705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e02801ea870>]}
+[0m05:04:11.181117 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:04:11.250556 [debug] [Thread-1 (]: Began running node model.banking.stg_ecom_customers
+[0m05:04:11.252300 [debug] [Thread-2 (]: Began running node model.banking.stg_ecom_orders
+[0m05:04:11.253335 [debug] [Thread-3 (]: Began running node model.banking.stg_ecom_products
+[0m05:04:11.254396 [info ] [Thread-1 (]: 1 of 6 START sql view model banking_silver.stg_ecom_customers .................. [RUN]
+[0m05:04:11.255716 [info ] [Thread-2 (]: 2 of 6 START sql view model banking_silver.stg_ecom_orders ..................... [RUN]
+[0m05:04:11.258152 [info ] [Thread-3 (]: 3 of 6 START sql view model banking_silver.stg_ecom_products ................... [RUN]
+[0m05:04:11.260254 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1_banking_silver, now model.banking.stg_ecom_customers)
+[0m05:04:11.261504 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1_banking_gold, now model.banking.stg_ecom_orders)
+[0m05:04:11.263506 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.banking.stg_ecom_products'
+[0m05:04:11.265359 [debug] [Thread-1 (]: Began compiling node model.banking.stg_ecom_customers
+[0m05:04:11.267348 [debug] [Thread-2 (]: Began compiling node model.banking.stg_ecom_orders
+[0m05:04:11.269156 [debug] [Thread-3 (]: Began compiling node model.banking.stg_ecom_products
+[0m05:04:11.283099 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking.stg_ecom_customers"
+[0m05:04:11.288339 [debug] [Thread-2 (]: Writing injected SQL for node "model.banking.stg_ecom_orders"
+[0m05:04:11.293674 [debug] [Thread-3 (]: Writing injected SQL for node "model.banking.stg_ecom_products"
+[0m05:04:11.308060 [debug] [Thread-3 (]: Began executing node model.banking.stg_ecom_products
+[0m05:04:11.308979 [debug] [Thread-1 (]: Began executing node model.banking.stg_ecom_customers
+[0m05:04:11.378410 [debug] [Thread-2 (]: Began executing node model.banking.stg_ecom_orders
+[0m05:04:11.383495 [debug] [Thread-1 (]: Writing runtime sql for node "model.banking.stg_ecom_customers"
+[0m05:04:11.384594 [debug] [Thread-3 (]: Writing runtime sql for node "model.banking.stg_ecom_products"
+[0m05:04:11.389416 [debug] [Thread-2 (]: Writing runtime sql for node "model.banking.stg_ecom_orders"
+[0m05:04:11.405501 [debug] [Thread-3 (]: On model.banking.stg_ecom_products: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_products"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_products`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_products`
+
+),
+
+renamed as (
+
+    select
+        price,
+        UPPER(category) AS category,
+        UPPER(product_name) AS product_name,
+        product_id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m05:04:11.407409 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m05:04:11.408400 [debug] [Thread-1 (]: On model.banking.stg_ecom_customers: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_customers"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_customers`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_customers`
+
+),
+
+renamed as (
+
+    select
+        DATE(TIMESTAMP_MILLIS(signup_date)) as signup_date,
+        UPPER(last_name) AS last_name,
+        email,
+        UPPER(first_name) AS first_name,
+        customer_id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m05:04:11.410613 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:04:11.413134 [debug] [Thread-2 (]: On model.banking.stg_ecom_orders: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_orders"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_orders`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_orders`
+
+),
+
+renamed as (
+
+    select
+        product_id,
+        customer_id,
+        total_amount,
+        quantity,
+        order_date,
+        id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m05:04:11.414333 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m05:04:12.366388 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:00994d96-5d2f-4d31-b8cd-2d438eb2ded2&page=queryresults
+[0m05:04:12.808285 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:4d82ff55-0b78-4e94-ad4b-00fe5ea53c34&page=queryresults
+[0m05:04:12.842534 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:b8cb17ca-0aba-47cd-86d6-4a06bc7285af&page=queryresults
+[0m05:04:13.309054 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e0283ee0c20>]}
+[0m05:04:13.311361 [info ] [Thread-1 (]: 1 of 6 OK created sql view model banking_silver.stg_ecom_customers ............. [[32mCREATE VIEW (0 processed)[0m in 2.04s]
+[0m05:04:13.314173 [debug] [Thread-1 (]: Finished running node model.banking.stg_ecom_customers
+[0m05:04:13.470681 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e027f05cb00>]}
+[0m05:04:13.472205 [info ] [Thread-3 (]: 3 of 6 OK created sql view model banking_silver.stg_ecom_products .............. [[32mCREATE VIEW (0 processed)[0m in 2.21s]
+[0m05:04:13.475397 [debug] [Thread-3 (]: Finished running node model.banking.stg_ecom_products
+[0m05:04:13.489493 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e027f0499a0>]}
+[0m05:04:13.490845 [info ] [Thread-2 (]: 2 of 6 OK created sql view model banking_silver.stg_ecom_orders ................ [[32mCREATE VIEW (0 processed)[0m in 2.23s]
+[0m05:04:13.493779 [debug] [Thread-2 (]: Finished running node model.banking.stg_ecom_orders
+[0m05:04:13.496323 [debug] [Thread-4 (]: Began running node model.banking.int_ecom_orders_enriched
+[0m05:04:13.497512 [info ] [Thread-4 (]: 4 of 6 START sql table model banking_silver.int_ecom_orders_enriched ........... [RUN]
+[0m05:04:13.499156 [debug] [Thread-4 (]: Acquiring new bigquery connection 'model.banking.int_ecom_orders_enriched'
+[0m05:04:13.500933 [debug] [Thread-4 (]: Began compiling node model.banking.int_ecom_orders_enriched
+[0m05:04:13.510525 [debug] [Thread-4 (]: Writing injected SQL for node "model.banking.int_ecom_orders_enriched"
+[0m05:04:13.534599 [debug] [Thread-4 (]: Began executing node model.banking.int_ecom_orders_enriched
+[0m05:04:13.572758 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m05:04:14.209845 [debug] [Thread-4 (]: Writing runtime sql for node "model.banking.int_ecom_orders_enriched"
+[0m05:04:14.230440 [debug] [Thread-4 (]: On model.banking.int_ecom_orders_enriched: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.int_ecom_orders_enriched"} */
+
+  
+    
+
+    create or replace table `serious-music-469407-f1`.`banking_silver`.`int_ecom_orders_enriched`
+      
+    partition by position_date
+    cluster by customer_id
+
+    
+    OPTIONS(
+      require_partition_filter=False
+    )
+    as (
+      WITH ORDERS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_orders`
+)
+
+, CUSTOMERS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_customers`
+)
+
+, PRODUCTS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_products`
+)
+
+SELECT
+    CAST('2025-10-23' AS DATE) AS position_date,
+    CUSTOMERS.customer_id,
+    CUSTOMERS.first_name || ' ' || CUSTOMERS.last_name AS customer_name,
+    CUSTOMERS.email,
+    CUSTOMERS.signup_date,
+    ORDERS.id as order_id,
+    ORDERS.order_date,
+    ORDERS.quantity,
+    ORDERS.total_amount,
+    
+    CASE
+        WHEN ORDERS.total_amount > 1000 THEN 'HIGH VALUE'
+        WHEN ORDERS.total_amount BETWEEN 500 AND 1000 THEN 'MEDUM VALUE'
+        ELSE 'LOW VALUE'
+    END AS order_value_segment,
+
+    PRODUCTS.product_name,
+    PRODUCTS.category,
+    PRODUCTS.price
+
+FROM CUSTOMERS
+LEFT JOIN ORDERS
+    ON CUSTOMERS.customer_id = ORDERS.customer_id
+LEFT JOIN PRODUCTS
+    ON ORDERS.product_id = PRODUCTS.product_id
+    );
+  
+[0m05:04:15.083609 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:a61ad821-9088-4db7-a8bc-5562445f96d0&page=queryresults
+[0m05:04:19.035013 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e027c5499a0>]}
+[0m05:04:19.037253 [info ] [Thread-4 (]: 4 of 6 OK created sql table model banking_silver.int_ecom_orders_enriched ...... [[32mCREATE TABLE (10.0 rows, 846.0 Bytes processed)[0m in 5.53s]
+[0m05:04:19.039637 [debug] [Thread-4 (]: Finished running node model.banking.int_ecom_orders_enriched
+[0m05:04:19.043578 [debug] [Thread-3 (]: Began running node test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644
+[0m05:04:19.046126 [info ] [Thread-3 (]: 5 of 6 START test not_null_int_ecom_orders_enriched_customer_id ................ [RUN]
+[0m05:04:19.048300 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.banking.stg_ecom_products, now test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644)
+[0m05:04:19.049747 [debug] [Thread-3 (]: Began compiling node test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644
+[0m05:04:19.085653 [debug] [Thread-3 (]: Writing injected SQL for node "test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644"
+[0m05:04:19.134220 [debug] [Thread-3 (]: Began executing node test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644
+[0m05:04:19.169401 [debug] [Thread-3 (]: Writing runtime sql for node "test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644"
+[0m05:04:19.223067 [debug] [Thread-3 (]: On test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from `serious-music-469407-f1`.`banking_silver`.`int_ecom_orders_enriched`
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m05:04:19.224800 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m05:04:21.789545 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:8593e1d6-ffab-4d0d-b3e6-f12e891637da&page=queryresults
+[0m05:04:22.867865 [info ] [Thread-3 (]: 5 of 6 PASS not_null_int_ecom_orders_enriched_customer_id ...................... [[32mPASS[0m in 3.82s]
+[0m05:04:22.869314 [debug] [Thread-3 (]: Finished running node test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644
+[0m05:04:22.870643 [debug] [Thread-1 (]: Began running node model.banking.mart_ecom_sales_summary
+[0m05:04:22.872168 [info ] [Thread-1 (]: 6 of 6 START sql table model banking_gold.mart_ecom_sales_summary .............. [RUN]
+[0m05:04:22.873959 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.banking.stg_ecom_customers, now model.banking.mart_ecom_sales_summary)
+[0m05:04:22.875719 [debug] [Thread-1 (]: Began compiling node model.banking.mart_ecom_sales_summary
+[0m05:04:22.883288 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking.mart_ecom_sales_summary"
+[0m05:04:22.907857 [debug] [Thread-1 (]: Began executing node model.banking.mart_ecom_sales_summary
+[0m05:04:22.916072 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:04:23.523417 [debug] [Thread-1 (]: Writing runtime sql for node "model.banking.mart_ecom_sales_summary"
+[0m05:04:23.549164 [debug] [Thread-1 (]: On model.banking.mart_ecom_sales_summary: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.mart_ecom_sales_summary"} */
+
+  
+    
+
+    create or replace table `serious-music-469407-f1`.`banking_gold`.`mart_ecom_sales_summary`
+      
+    partition by position_date
+    cluster by order_month, category
+
+    
+    OPTIONS(
+      require_partition_filter=False
+    )
+    as (
+      
+
+SELECT
+    CAST('2025-10-23' AS DATE) AS position_date,
+    DATE_TRUNC(order_date, MONTH) AS order_month,
+    category,
+    COUNT(DISTINCT order_id) AS total_orders,
+    SUM(quantity) AS total_items_sold,
+    SUM(total_amount) AS total_revenue,
+    ROUND(AVG(total_amount), 2) AS avg_order_value
+FROM `serious-music-469407-f1`.`banking_silver`.`int_ecom_orders_enriched`
+WHERE position_date = '2025-10-23'
+GROUP BY 1, 2, 3
+    );
+  
+[0m05:04:24.211418 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:141a664b-f2fa-4688-9e37-72e606918e0a&page=queryresults
+[0m05:04:27.085431 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e805f696-3e1b-4edb-81db-016e64dad889', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e027c3e3fb0>]}
+[0m05:04:27.100370 [info ] [Thread-1 (]: 6 of 6 OK created sql table model banking_gold.mart_ecom_sales_summary ......... [[32mCREATE TABLE (3.0 rows, 474.0 Bytes processed)[0m in 4.21s]
+[0m05:04:27.106008 [debug] [Thread-1 (]: Finished running node model.banking.mart_ecom_sales_summary
+[0m05:04:27.113103 [info ] [MainThread]: 
+[0m05:04:27.138882 [debug] [MainThread]: Writing injected SQL for node "operation.banking.banking-on-run-end-0"
+[0m05:04:27.168983 [info ] [MainThread]: 1 of 1 START hook: banking.on-run-end.0 ........................................ [RUN]
+[0m05:04:27.170286 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "connection_name": "master"} */
+
+    ALTER TABLE serious-music-469407-f1.banking_silver.int_ecom_orders_enriched
+    SET OPTIONS (require_partition_filter = true);
+
+    ALTER TABLE serious-music-469407-f1.banking_gold.mart_ecom_sales_summary
+    SET OPTIONS (require_partition_filter = true);
+
+[0m05:04:27.172771 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:04:27.854278 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:122098bd-a068-47b7-9cb2-25268c08d152&page=queryresults
+[0m05:04:29.562742 [info ] [MainThread]: 1 of 1 OK hook: banking.on-run-end.0 ........................................... [[32mOK[0m in 2.44s]
+[0m05:04:29.589847 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:04:29.592497 [debug] [MainThread]: Connection 'model.banking.stg_ecom_orders' was properly closed.
+[0m05:04:29.594664 [debug] [MainThread]: Connection 'model.banking.mart_ecom_sales_summary' was properly closed.
+[0m05:04:29.596433 [debug] [MainThread]: Connection 'test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644' was properly closed.
+[0m05:04:29.598846 [debug] [MainThread]: Connection 'model.banking.int_ecom_orders_enriched' was properly closed.
+[0m05:04:29.600666 [info ] [MainThread]: 
+[0m05:04:29.602349 [info ] [MainThread]: Finished running 1 project hook, 2 table models, 1 test, 3 view models in 0 hours 0 minutes and 20.93 seconds (20.93s).
+[0m05:04:29.606317 [debug] [MainThread]: Command end result
+[0m05:04:29.706678 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m05:04:29.720894 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m05:04:29.740692 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/include/dbt_project/target/run_results.json
+[0m05:04:29.741851 [info ] [MainThread]: 
+[0m05:04:29.743753 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m05:04:29.745228 [info ] [MainThread]: 
+[0m05:04:29.746381 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m05:04:29.748745 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 42.829704, "process_in_blocks": "2640", "process_kernel_time": 6.344721, "process_mem_max_rss": "426704", "process_out_blocks": "0", "process_user_time": 24.305096}
+[0m05:04:29.750976 [debug] [MainThread]: Command `dbt build` succeeded at 05:04:29.750655 after 42.83 seconds
+[0m05:04:29.752757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e02b3ccba10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e02b43f9ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e027c3d84a0>]}
+[0m05:04:29.754501 [debug] [MainThread]: Flushing usage events
+[0m05:04:31.247064 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:16:27.753357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d29ab3920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d2a432060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d2a30dc70>]}
+
+
+============================== 06:16:27.762112 | 9b9e8625-cba4-4da6-95f8-43b1bd5aeba6 ==============================
+[0m06:16:27.762112 [info ] [MainThread]: Running with dbt=1.11.0-b3
+[0m06:16:27.764563 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'log_path': '/usr/local/airflow/include/dbt_project/logs', 'no_print': 'None', 'partial_parse': 'True', 'profiles_dir': '/usr/local/airflow/include/dbt_project', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'quiet': 'False', 'invocation_command': 'dbt build --project-dir /usr/local/airflow/include/dbt_project --profiles-dir /usr/local/airflow/include/dbt_project -s +mart_ecom_sales_summary', 'introspect': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'target_path': 'None', 'indirect_selection': 'eager', 'warn_error': 'None', 'printer_width': '80', 'log_format': 'default', 'version_check': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True'}
+[0m06:16:47.002759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d2c2be2a0>]}
+[0m06:16:47.111966 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d2a1c6030>]}
+[0m06:16:47.113460 [info ] [MainThread]: Registered adapter: bigquery=1.10.2
+[0m06:16:47.480068 [debug] [MainThread]: checksum: e63134dccc1251cfb572caf0e4aa952f030c125ee3634f3bf2c0a2e1bb6ae349, vars: {}, profile: , target: , version: 1.11.0b3
+[0m06:16:48.479646 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:16:48.480736 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:16:48.493998 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.banking.src
+[0m06:16:48.568121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d29dc7f20>]}
+[0m06:16:48.752437 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m06:16:48.764633 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m06:16:48.841036 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d29dc5940>]}
+[0m06:16:48.842053 [info ] [MainThread]: Found 1 operation, 5 models, 1 test, 12 sources, 508 macros
+[0m06:16:48.846880 [info ] [MainThread]: 
+[0m06:16:48.849937 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m06:16:48.851249 [info ] [MainThread]: 
+[0m06:16:48.852860 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m06:16:48.858687 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_serious-music-469407-f1'
+[0m06:16:48.860065 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_serious-music-469407-f1'
+[0m06:16:48.860777 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:16:48.862155 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:16:49.638559 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1, now list_serious-music-469407-f1_banking_gold)
+[0m06:16:49.639953 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m06:16:49.641105 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1, now list_serious-music-469407-f1_banking_silver)
+[0m06:16:49.642530 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m06:16:50.301814 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d2c1853a0>]}
+[0m06:16:50.303828 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m06:16:50.360894 [debug] [Thread-1 (]: Began running node model.banking.stg_ecom_customers
+[0m06:16:50.361917 [debug] [Thread-2 (]: Began running node model.banking.stg_ecom_orders
+[0m06:16:50.363972 [debug] [Thread-3 (]: Began running node model.banking.stg_ecom_products
+[0m06:16:50.365080 [info ] [Thread-1 (]: 1 of 6 START sql view model banking_silver.stg_ecom_customers .................. [RUN]
+[0m06:16:50.366659 [info ] [Thread-2 (]: 2 of 6 START sql view model banking_silver.stg_ecom_orders ..................... [RUN]
+[0m06:16:50.368220 [info ] [Thread-3 (]: 3 of 6 START sql view model banking_silver.stg_ecom_products ................... [RUN]
+[0m06:16:50.369954 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1_banking_silver, now model.banking.stg_ecom_customers)
+[0m06:16:50.371506 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_serious-music-469407-f1_banking_gold, now model.banking.stg_ecom_orders)
+[0m06:16:50.373358 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.banking.stg_ecom_products'
+[0m06:16:50.374833 [debug] [Thread-1 (]: Began compiling node model.banking.stg_ecom_customers
+[0m06:16:50.377762 [debug] [Thread-2 (]: Began compiling node model.banking.stg_ecom_orders
+[0m06:16:50.379062 [debug] [Thread-3 (]: Began compiling node model.banking.stg_ecom_products
+[0m06:16:50.401999 [debug] [Thread-2 (]: Writing injected SQL for node "model.banking.stg_ecom_orders"
+[0m06:16:50.417791 [debug] [Thread-3 (]: Writing injected SQL for node "model.banking.stg_ecom_products"
+[0m06:16:50.407524 [debug] [Thread-1 (]: Writing injected SQL for node "model.banking.stg_ecom_customers"
+[0m06:16:50.437150 [debug] [Thread-3 (]: Began executing node model.banking.stg_ecom_products
+[0m06:16:50.458798 [debug] [Thread-1 (]: Began executing node model.banking.stg_ecom_customers
+[0m06:16:50.464899 [debug] [Thread-2 (]: Began executing node model.banking.stg_ecom_orders
+[0m06:16:50.532414 [debug] [Thread-1 (]: Writing runtime sql for node "model.banking.stg_ecom_customers"
+[0m06:16:50.535441 [debug] [Thread-3 (]: Writing runtime sql for node "model.banking.stg_ecom_products"
+[0m06:16:50.536650 [debug] [Thread-2 (]: Writing runtime sql for node "model.banking.stg_ecom_orders"
+[0m06:16:50.551863 [debug] [Thread-2 (]: On model.banking.stg_ecom_orders: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_orders"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_orders`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_orders`
+
+),
+
+renamed as (
+
+    select
+        product_id,
+        customer_id,
+        total_amount,
+        quantity,
+        order_date,
+        id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m06:16:50.554504 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:16:50.555561 [debug] [Thread-1 (]: On model.banking.stg_ecom_customers: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_customers"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_customers`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_customers`
+
+),
+
+renamed as (
+
+    select
+        DATE(TIMESTAMP_MILLIS(signup_date)) as signup_date,
+        UPPER(last_name) AS last_name,
+        email,
+        UPPER(first_name) AS first_name,
+        customer_id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m06:16:50.556834 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:16:50.558165 [debug] [Thread-3 (]: On model.banking.stg_ecom_products: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.stg_ecom_products"} */
+
+
+  create or replace view `serious-music-469407-f1`.`banking_silver`.`stg_ecom_products`
+  OPTIONS()
+  as with 
+
+source as (
+
+    select * from `serious-music-469407-f1`.`banking_bronze`.`ecom_products`
+
+),
+
+renamed as (
+
+    select
+        price,
+        UPPER(category) AS category,
+        UPPER(product_name) AS product_name,
+        product_id
+
+    from source
+
+)
+
+select * from renamed;
+
+
+[0m06:16:50.559767 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m06:16:51.497451 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:6df22bd6-0f0b-4881-88d7-409c271c50cb&page=queryresults
+[0m06:16:51.508243 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:8af6cac7-da12-48e2-b0b1-0d3896e00287&page=queryresults
+[0m06:16:51.534154 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:0630a0b3-0a14-4f8d-bbb3-41c817cb61f7&page=queryresults
+[0m06:16:52.340609 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790cf4317e90>]}
+[0m06:16:52.342071 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790cf673a540>]}
+[0m06:16:52.344094 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790cf9c1fec0>]}
+[0m06:16:52.345303 [info ] [Thread-2 (]: 2 of 6 OK created sql view model banking_silver.stg_ecom_orders ................ [[32mCREATE VIEW (0 processed)[0m in 1.96s]
+[0m06:16:52.346858 [info ] [Thread-3 (]: 3 of 6 OK created sql view model banking_silver.stg_ecom_products .............. [[32mCREATE VIEW (0 processed)[0m in 1.97s]
+[0m06:16:52.348328 [info ] [Thread-1 (]: 1 of 6 OK created sql view model banking_silver.stg_ecom_customers ............. [[32mCREATE VIEW (0 processed)[0m in 1.97s]
+[0m06:16:52.350121 [debug] [Thread-2 (]: Finished running node model.banking.stg_ecom_orders
+[0m06:16:52.351852 [debug] [Thread-3 (]: Finished running node model.banking.stg_ecom_products
+[0m06:16:52.354277 [debug] [Thread-1 (]: Finished running node model.banking.stg_ecom_customers
+[0m06:16:52.358233 [debug] [Thread-4 (]: Began running node model.banking.int_ecom_orders_enriched
+[0m06:16:52.359939 [info ] [Thread-4 (]: 4 of 6 START sql table model banking_silver.int_ecom_orders_enriched ........... [RUN]
+[0m06:16:52.362092 [debug] [Thread-4 (]: Acquiring new bigquery connection 'model.banking.int_ecom_orders_enriched'
+[0m06:16:52.364744 [debug] [Thread-4 (]: Began compiling node model.banking.int_ecom_orders_enriched
+[0m06:16:52.373015 [debug] [Thread-4 (]: Writing injected SQL for node "model.banking.int_ecom_orders_enriched"
+[0m06:16:52.396287 [debug] [Thread-4 (]: Began executing node model.banking.int_ecom_orders_enriched
+[0m06:16:52.436731 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m06:16:53.124798 [debug] [Thread-4 (]: Writing runtime sql for node "model.banking.int_ecom_orders_enriched"
+[0m06:16:53.145318 [debug] [Thread-4 (]: On model.banking.int_ecom_orders_enriched: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.int_ecom_orders_enriched"} */
+
+  
+    
+
+    create or replace table `serious-music-469407-f1`.`banking_silver`.`int_ecom_orders_enriched`
+      
+    partition by position_date
+    cluster by customer_id
+
+    
+    OPTIONS(
+      require_partition_filter=False
+    )
+    as (
+      WITH ORDERS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_orders`
+)
+
+, CUSTOMERS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_customers`
+)
+
+, PRODUCTS AS (
+  SELECT * FROM `serious-music-469407-f1`.`banking_silver`.`stg_ecom_products`
+)
+
+SELECT
+    CAST('2025-10-23' AS DATE) AS position_date,
+    CUSTOMERS.customer_id,
+    CUSTOMERS.first_name || ' ' || CUSTOMERS.last_name AS customer_name,
+    CUSTOMERS.email,
+    CUSTOMERS.signup_date,
+    ORDERS.id as order_id,
+    ORDERS.order_date,
+    ORDERS.quantity,
+    ORDERS.total_amount,
+    
+    CASE
+        WHEN ORDERS.total_amount > 1000 THEN 'HIGH VALUE'
+        WHEN ORDERS.total_amount BETWEEN 500 AND 1000 THEN 'MEDUM VALUE'
+        ELSE 'LOW VALUE'
+    END AS order_value_segment,
+
+    PRODUCTS.product_name,
+    PRODUCTS.category,
+    PRODUCTS.price
+
+FROM CUSTOMERS
+LEFT JOIN ORDERS
+    ON CUSTOMERS.customer_id = ORDERS.customer_id
+LEFT JOIN PRODUCTS
+    ON ORDERS.product_id = PRODUCTS.product_id
+    );
+  
+[0m06:16:54.003397 [debug] [Thread-4 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:97b39026-912c-4816-b20a-9d9f44ab2c62&page=queryresults
+[0m06:16:56.494758 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790cf68f9940>]}
+[0m06:16:56.496946 [info ] [Thread-4 (]: 4 of 6 OK created sql table model banking_silver.int_ecom_orders_enriched ...... [[32mCREATE TABLE (10.0 rows, 846.0 Bytes processed)[0m in 4.13s]
+[0m06:16:56.498862 [debug] [Thread-4 (]: Finished running node model.banking.int_ecom_orders_enriched
+[0m06:16:56.501400 [debug] [Thread-3 (]: Began running node test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644
+[0m06:16:56.503469 [info ] [Thread-3 (]: 5 of 6 START test not_null_int_ecom_orders_enriched_customer_id ................ [RUN]
+[0m06:16:56.505309 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.banking.stg_ecom_products, now test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644)
+[0m06:16:56.506825 [debug] [Thread-3 (]: Began compiling node test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644
+[0m06:16:56.528523 [debug] [Thread-3 (]: Writing injected SQL for node "test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644"
+[0m06:16:56.556803 [debug] [Thread-3 (]: Began executing node test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644
+[0m06:16:56.584988 [debug] [Thread-3 (]: Writing runtime sql for node "test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644"
+[0m06:16:56.613568 [debug] [Thread-3 (]: On test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from `serious-music-469407-f1`.`banking_silver`.`int_ecom_orders_enriched`
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m06:16:56.615106 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m06:16:57.591859 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:33db24e0-93f0-4e69-8ac6-2737beaf3622&page=queryresults
+[0m06:16:58.544751 [info ] [Thread-3 (]: 5 of 6 PASS not_null_int_ecom_orders_enriched_customer_id ...................... [[32mPASS[0m in 2.04s]
+[0m06:16:58.546933 [debug] [Thread-3 (]: Finished running node test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644
+[0m06:16:58.549916 [debug] [Thread-2 (]: Began running node model.banking.mart_ecom_sales_summary
+[0m06:16:58.551449 [info ] [Thread-2 (]: 6 of 6 START sql table model banking_gold.mart_ecom_sales_summary .............. [RUN]
+[0m06:16:58.552965 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.banking.stg_ecom_orders, now model.banking.mart_ecom_sales_summary)
+[0m06:16:58.554001 [debug] [Thread-2 (]: Began compiling node model.banking.mart_ecom_sales_summary
+[0m06:16:58.560988 [debug] [Thread-2 (]: Writing injected SQL for node "model.banking.mart_ecom_sales_summary"
+[0m06:16:58.581038 [debug] [Thread-2 (]: Began executing node model.banking.mart_ecom_sales_summary
+[0m06:16:58.585006 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m06:16:59.127601 [debug] [Thread-2 (]: Writing runtime sql for node "model.banking.mart_ecom_sales_summary"
+[0m06:16:59.148140 [debug] [Thread-2 (]: On model.banking.mart_ecom_sales_summary: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "node_id": "model.banking.mart_ecom_sales_summary"} */
+
+  
+    
+
+    create or replace table `serious-music-469407-f1`.`banking_gold`.`mart_ecom_sales_summary`
+      
+    partition by position_date
+    cluster by order_month, category
+
+    
+    OPTIONS(
+      require_partition_filter=False
+    )
+    as (
+      
+
+SELECT
+    CAST('2025-10-23' AS DATE) AS position_date,
+    DATE_TRUNC(order_date, MONTH) AS order_month,
+    category,
+    COUNT(DISTINCT order_id) AS total_orders,
+    SUM(quantity) AS total_items_sold,
+    SUM(total_amount) AS total_revenue,
+    ROUND(AVG(total_amount), 2) AS avg_order_value
+FROM `serious-music-469407-f1`.`banking_silver`.`int_ecom_orders_enriched`
+WHERE position_date = '2025-10-23'
+GROUP BY 1, 2, 3
+    );
+  
+[0m06:16:59.869721 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:6e4f6cb8-7ed0-4e74-b205-a904d28a1a46&page=queryresults
+[0m06:17:02.339738 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9b9e8625-cba4-4da6-95f8-43b1bd5aeba6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790cf40f0a70>]}
+[0m06:17:02.341776 [info ] [Thread-2 (]: 6 of 6 OK created sql table model banking_gold.mart_ecom_sales_summary ......... [[32mCREATE TABLE (3.0 rows, 474.0 Bytes processed)[0m in 3.79s]
+[0m06:17:02.344037 [debug] [Thread-2 (]: Finished running node model.banking.mart_ecom_sales_summary
+[0m06:17:02.348616 [info ] [MainThread]: 
+[0m06:17:02.356531 [debug] [MainThread]: Writing injected SQL for node "operation.banking.banking-on-run-end-0"
+[0m06:17:02.386449 [info ] [MainThread]: 1 of 1 START hook: banking.on-run-end.0 ........................................ [RUN]
+[0m06:17:02.387857 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.0b3", "profile_name": "sample_project", "target_name": "dev", "connection_name": "master"} */
+
+    ALTER TABLE serious-music-469407-f1.banking_silver.int_ecom_orders_enriched
+    SET OPTIONS (require_partition_filter = true);
+
+    ALTER TABLE serious-music-469407-f1.banking_gold.mart_ecom_sales_summary
+    SET OPTIONS (require_partition_filter = true);
+
+[0m06:17:02.389123 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m06:17:03.022914 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=serious-music-469407-f1&j=bq:US:6c5ff108-54b9-4300-b00d-dad58c2101b3&page=queryresults
+[0m06:17:04.212963 [info ] [MainThread]: 1 of 1 OK hook: banking.on-run-end.0 ........................................... [[32mOK[0m in 1.86s]
+[0m06:17:04.248068 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:17:04.252235 [debug] [MainThread]: Connection 'model.banking.stg_ecom_customers' was properly closed.
+[0m06:17:04.254495 [debug] [MainThread]: Connection 'model.banking.mart_ecom_sales_summary' was properly closed.
+[0m06:17:04.261032 [debug] [MainThread]: Connection 'test.banking.not_null_int_ecom_orders_enriched_customer_id.6034d98644' was properly closed.
+[0m06:17:04.266818 [debug] [MainThread]: Connection 'model.banking.int_ecom_orders_enriched' was properly closed.
+[0m06:17:04.277198 [info ] [MainThread]: 
+[0m06:17:04.279267 [info ] [MainThread]: Finished running 1 project hook, 2 table models, 1 test, 3 view models in 0 hours 0 minutes and 15.42 seconds (15.42s).
+[0m06:17:04.292458 [debug] [MainThread]: Command end result
+[0m06:17:04.542028 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/local/airflow/include/dbt_project/target/manifest.json
+[0m06:17:04.573775 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/local/airflow/include/dbt_project/target/semantic_manifest.json
+[0m06:17:04.623167 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/local/airflow/include/dbt_project/target/run_results.json
+[0m06:17:04.624684 [info ] [MainThread]: 
+[0m06:17:04.626521 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:17:04.628503 [info ] [MainThread]: 
+[0m06:17:04.632849 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m06:17:04.642872 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 35.099304, "process_in_blocks": "10208", "process_kernel_time": 7.325646, "process_mem_max_rss": "426332", "process_out_blocks": "0", "process_user_time": 21.08315}
+[0m06:17:04.645418 [debug] [MainThread]: Command `dbt build` succeeded at 06:17:04.644985 after 35.10 seconds
+[0m06:17:04.647856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d2a143cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d2a20d040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x790d2a6e3c80>]}
+[0m06:17:04.649500 [debug] [MainThread]: Flushing usage events
+[0m06:17:05.928475 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,76 @@
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'banking'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'sample_project'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+target-path: "target"  # directory which will store compiled SQL files
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In dbt, the default materialization for a model is a view. This means, when you run 
+# dbt run or dbt build, all of your models will be built as a view in your data platform. 
+# The configuration below will override this setting for models in the example folder to 
+# instead be materialized as tables. Any models you add to the root of the models folder will 
+# continue to be built as views. These settings can be overridden in the individual model files
+# using the `{{ config(...) }}` macro.
+
+models:
+  banking:  # or your project name from dbt_project.yml
+    # Applies to all files under models/example/
+    src:                                # BRONZE - raw source references (only YAML, no SQL).
+      +schema: bronze
+    stg:                                # SILVER - 1:1 cleaned tables, light transform if needed.
+      +schema: silver
+      +materialized: view
+    int:                                # SILVER - intermediate joins / heavy logic.
+      +schema: silver
+      +materialized: table
+      +partition_by:
+        field: position_date
+        data_type: date
+      +require_partition_filter: false
+      +cluster_by: ['customer_id']
+    marts:                              # GOLD - business-ready marts, business logic.
+      +schema: gold
+      +materialized: table
+      +partition_by:
+        field: position_date
+        data_type: date
+      +require_partition_filter: false
+      +cluster_by: ['customer_id']
+
+on-run-end:
+# execute after all builds and tests succeed.
+  # `on-run-end` hooks execute after all builds and tests succeed.
+  # The Jinja loop scans all models in the project, and for each partitioned table, it automatically enforces the partition filter.
+  # This ensures tests run fine first, and only after everything passes, tables become protected.
+    # `and (node.name.startswith('int_') or node.name.startswith('mart_'))`
+  - >-
+    {% for node in graph.nodes.values() 
+        if node.resource_type == 'model' 
+        and node.config.get('materialized') == 'table' 
+        and node.config.get('partition_by') is not none %}
+        ALTER TABLE {{ node.database }}.{{ node.schema }}.{{ node.alias }}
+        SET OPTIONS (require_partition_filter = true);
+    {% endfor %}
+flags:
+  require_generic_test_arguments_property: true

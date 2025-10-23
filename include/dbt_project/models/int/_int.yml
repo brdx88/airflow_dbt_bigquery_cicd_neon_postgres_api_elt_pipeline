@@ -1,0 +1,90 @@
+version: 2
+
+models:
+  - name: int_accounts_summary
+    description: "level `accounts` has total accounts, total balance, avg balance, and flag has active account or not."
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+      - name: total_accounts
+        data_tests:
+          - not_null
+      - name: has_active_account
+        data_tests:
+          - accepted_values:
+              arguments:
+                column_name: "CAST(has_active_account as STRING)"
+                values: ['1','0']
+  
+  - name: int_branches_summary
+    columns:
+      - name: branch_id
+        tests:
+          - unique
+          - not_null
+      - name: branch_name
+        tests:
+          - not_null
+      - name: branch_age_years
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 200
+      - name: branch_size_category
+        tests:
+          - accepted_values:
+              values:
+                - 'SMALL'
+                - 'MEDIUM'
+                - 'LARGE'
+  
+  - name: int_customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: int_loans_summary
+    columns:
+      - name: loan_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+      # - name: loan_status
+      #   tests:
+      #     - accepted_values:
+      #         values:
+      #           - 'ACTIVE'
+      #           - 'CLOSED'
+      #           - 'DEFAULTED'
+      # - name: is_active_loan
+      #   tests:
+      #     - accepted_values:
+      #         arguments:
+      #           column_name: "CAST(is_active_account as STRING)"
+      #           values: ['1','0']
+  - name: int_payments_summary
+    columns:
+      - name: payment_id
+        tests:
+          - not_null
+          - unique
+  - name: int_transactions_summary
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+
+  - name: int_ecom_orders_enriched
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
