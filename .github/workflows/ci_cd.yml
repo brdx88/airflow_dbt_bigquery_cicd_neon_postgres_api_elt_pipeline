@@ -14,8 +14,8 @@ env:
   BQ_TABLE_ECOM_PRODUCTS: ${{ secrets.BQ_TABLE_ECOM_PRODUCTS }}
   BQ_TABLE_ECOM_CUSTOMERS_ECOM: ${{ secrets.BQ_TABLE_ECOM_CUSTOMERS_ECOM }}
   BQ_TABLE_ECOM_ORDERS: ${{ secrets.BQ_TABLE_ECOM_ORDERS }}
-  DBT_PROJECT_DIR: ./airflow/include/dbt_project
-  DBT_PROFILES_DIR: ./airflow/include/dbt_project
+  DBT_PROJECT_DIR: ./include/dbt_project
+  DBT_PROFILES_DIR: ./include/dbt_project
   POSTGRES_CONN: ${{ secrets.POSTGRES_CONN }}
 
 jobs:
