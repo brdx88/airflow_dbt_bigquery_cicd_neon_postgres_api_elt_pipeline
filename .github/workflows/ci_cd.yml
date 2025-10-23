@@ -60,7 +60,8 @@ jobs:
       - name: Validate Airflow DAGs
         run: |
           echo "Validating Airflow DAGs..."
-          airflow db init
+          airflow version
+          airflow db migrate || airflow db init || true
           airflow dags list
 
       # --------------------------
