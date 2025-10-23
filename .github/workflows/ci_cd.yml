@@ -68,7 +68,7 @@ jobs:
       - name: Debug repository structure
         run: |
           echo "Listing repository contents..."
-          ls -R ./airflow
+          ls -R
 
       # --------------------------
       # 6️⃣ Validate dbt (syntax only)
