@@ -1,4 +1,4 @@
-name: CI/CD for Airflow & dbt
+name: CI - Airflow, Python, dbt Validation
 
 on:
   push:
@@ -6,56 +6,75 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+  GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
+  BQ_DATASET: ${{ secrets.BQ_DATASET }}
+  BQ_TABLE_ECOM_PRODUCTS: ${{ secrets.BQ_TABLE_ECOM_PRODUCTS }}
+  BQ_TABLE_ECOM_CUSTOMERS_ECOM: ${{ secrets.BQ_TABLE_ECOM_CUSTOMERS_ECOM }}
+  BQ_TABLE_ECOM_ORDERS: ${{ secrets.BQ_TABLE_ECOM_ORDERS }}
+  DBT_PROJECT_DIR: ${{ secrets.DBT_PROJECT_DIR }}
+  DBT_PROFILES_DIR: ${{ secrets.DBT_PROFILES_DIR }}
+  POSTGRES_CONN: ${{ secrets.POSTGRES_CONN }}
+
 jobs:
-  build_and_test:
-    name: Compile dbt Models
+  validate:
+    name: Validate Airflow DAGs, Python Lint, and dbt
     runs-on: ubuntu-latest
-    environment: production
 
     steps:
-      # 1️⃣ Checkout Repository
-      - name: Checkout Repository
+      # --------------------------
+      # 1️⃣ Checkout repo
+      # --------------------------
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # --------------------------
       # 2️⃣ Set up Python
+      # --------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      # 3️⃣ Install dbt
-      - name: Install Dependencies
+      # --------------------------
+      # 3️⃣ Install dependencies
+      # --------------------------
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install dbt-bigquery
+          pip install apache-airflow dbt-bigquery flake8
 
-      # 4️⃣ Setup GCP Credentials
-      - name: Set up GCP Credentials
+      # --------------------------
+      # 4️⃣ Lint all Python code
+      # --------------------------
+      - name: Run flake8 (Python lint)
         run: |
-          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > ${{ github.workspace }}/gcp_key.json
-          export GOOGLE_APPLICATION_CREDENTIALS=${{ github.workspace }}/gcp_key.json
+          echo "Running Python lint check..."
+          flake8 . --max-line-length=100 --ignore=E203,E266,E501,W503,F403,F401
 
-      # 5️⃣ Run dbt build
-      - name: Run dbt compile
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/gcp_key.json
-          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-          DBT_PROJECT_DIR: ${{ secrets.DBT_PROJECT_DIR }}
-          DBT_PROFILES_DIR: ${{ secrets.DBT_PROFILES_DIR }}
-          GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
-          BQ_DATASET: ${{ secrets.BQ_DATASET }}
-          BQ_TABLE_ECOM_PRODUCTS: ${{ secrets.BQ_TABLE_ECOM_PRODUCTS }}
-          BQ_TABLE_ECOM_CUSTOMERS_ECOM: ${{ secrets.BQ_TABLE_ECOM_CUSTOMERS_ECOM }}
-          BQ_TABLE_ECOM_TRANSACTIONS: ${{ secrets.BQ_TABLE_ECOM_TRANSACTIONS }}
-          BQ_TABLE_ECOM_ORDERS: ${{ secrets.BQ_TABLE_ECOM_ORDERS }}
-          POSTGRES_CONN: ${{ secrets.POSTGRES_CONN }}
+      # --------------------------
+      # 5️⃣ Validate Airflow DAGs
+      # --------------------------
+      - name: Validate Airflow DAGs
         run: |
+          echo "Validating Airflow DAGs..."
+          airflow db init
+          airflow dags list
+
+      # --------------------------
+      # 6️⃣ Validate dbt (syntax only)
+      # --------------------------
+      - name: Validate dbt project
+        run: |
+          echo "Validating dbt project syntax..."
           cd $DBT_PROJECT_DIR
           dbt deps
-          dbt compile --profiles-dir $DBT_PROFILES_DIR -s stg_loans
-        shell: bash
+          dbt compile --profiles-dir $DBT_PROFILES_DIR
 
-      # 6️⃣ Clean up credentials
-      - name: Clean up Credentials
-        if: always()
-        run: rm -f ${{ github.workspace }}/gcp_key.json
+      # --------------------------
+      # ✅ Success message
+      # --------------------------
+      - name: Done
+        run: echo "✅ All checks passed — ready to merge or deploy!"
