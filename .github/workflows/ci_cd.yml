@@ -64,6 +64,12 @@ jobs:
           airflow db migrate || airflow db init || true
           airflow dags list
 
+
+      - name: Debug repository structure
+        run: |
+          echo "Listing repository contents..."
+          ls -R ./airflow
+
       # --------------------------
       # 6️⃣ Validate dbt (syntax only)
       # --------------------------
