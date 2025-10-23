@@ -8,8 +8,7 @@ on:
 
 env:
   GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  # GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-  GOOGLE_APPLICATION_CREDENTIALS: /tmp/fake_gcp_key.json
+  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
   BQ_DATASET: ${{ secrets.BQ_DATASET }}
   BQ_TABLE_ECOM_PRODUCTS: ${{ secrets.BQ_TABLE_ECOM_PRODUCTS }}
@@ -79,8 +78,6 @@ jobs:
       - name: Validate dbt project syntax
         run: |
           echo "Validating dbt project syntax..."
-
-          echo "{}" > /tmp/fake_gcp_key.json
 
           DBT_PROJECT_DIR="$(pwd)/include/dbt_project"
           DBT_PROFILES_DIR="$(pwd)/include/dbt_project"
