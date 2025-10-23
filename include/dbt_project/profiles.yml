@@ -8,4 +8,5 @@ sample_project:
       dataset: banking
       threads: 4
 
-      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
+      keyfile: /usr/local/airflow/include/keys/gcp_bq_key.json
+
