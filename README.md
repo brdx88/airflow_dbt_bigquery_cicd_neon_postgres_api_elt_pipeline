@@ -1,7 +1,7 @@
 # 🛒 E-Commerce ELT Pipeline on Airflow (Docker + Astro) Including CI using GitHub Actions
 
 ## 🧭 Overview
-This project is a **local E-Commerce ELT pipeline** built on **Airflow 3.x**, powered by **Astronomer (Astro CLI)** and **Docker**.  
+This project is a **local E-Commerce ELT pipeline** built on **Airflow 3.x**, powered by **Astronomer (Astro CLI)**, **dbt**, **BigQuery**, **CloudStorage**, **GitHub Actions**, and **Docker**.  
 It’s designed to mimic a production-ready workflow — but fully local — for anyone who wants to understand how a modern ELT pipeline works end-to-end.
 
 Think of this as the "developer edition" of my Cloud Composer pipeline.  
