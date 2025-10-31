@@ -1,4 +1,4 @@
-# 🛒 E-Commerce ELT Pipeline on Airflow (Docker + Astro)
+# 🛒 E-Commerce ELT Pipeline on Airflow (Docker + Astro) Including CI using GitHub Actions
 
 ## 🧭 Overview
 This project is a **local E-Commerce ELT pipeline** built on **Airflow 3.x**, powered by **Astronomer (Astro CLI)** and **Docker**.  
